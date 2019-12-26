@@ -1,5 +1,5 @@
 # Netsh WLAN script
-A script to continuly monitor and parse the output of the 'netsh wlan show interfaces' and display the details in a windows GUI. With the option of save the details to log 
+A script to continually  monitor and parse the output of the 'netsh wlan show interfaces' and display the details in a windows GUI. With the option of save the details to log 
 
 The inspiration and starting place for this script was Nigel Bowden's powershell script
 http://wifinigel.blogspot.com/2016/09/getting-data-out-of-windows-netsh-wlan.html
