@@ -11,7 +11,7 @@ A script to continuly monitor and parse the output of the 'netsh wlan show inter
        as an adminsitrator on your machine and temporarily set the policy
        to unrestricted with this command:
 
-		Set-ExecutionPolicy Unrestricted -scope Process
+       Set-ExecutionPolicy Unrestricted -scope Process
 
        Once your powershell window is closed, this policy change is no
        longer in effect and your machine will return to the previous
@@ -21,8 +21,5 @@ A script to continuly monitor and parse the output of the 'netsh wlan show inter
        Get-ExecutionPolicy
 
  Note2: 
-        This has only been tested on a Win 10 machine. As this is parsing
-        command output, it is very likely to break easily. It would be
-        nice to pull this data out via a more "official" route to make
-        this more robust.
+        This has only been tested on a Win 10 machine. This is a a Beta script and will have bug. 
 
