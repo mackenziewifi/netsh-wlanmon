@@ -21,5 +21,5 @@ A script to continuly monitor and parse the output of the 'netsh wlan show inter
        Get-ExecutionPolicy
 
  Note2: 
-        This has only been tested on a Win 10 machine. This is a a Beta script and will have bug. 
+        This has only been tested on a Win 10 machine. This is a Beta script and will have bug. 
 
