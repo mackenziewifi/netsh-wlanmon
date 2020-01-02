@@ -34,7 +34,7 @@ Add-Type -AssemblyName System.Windows.Forms
 $WLANMon                        = New-Object system.Windows.Forms.Form
 $WLANMon.ClientSize             = '655,804'
 $WLANMon.BackColor              = "#000000"
-$WLANMon.text                   = "Netsh WLANMon - Beta 0.1"
+$WLANMon.text                   = "Netsh WLANMon - Beta 0.02"
 $WLANMon.TopMost                = $false
 $WLANMon.location        		= New-Object System.Drawing.Point(10,10)
 
