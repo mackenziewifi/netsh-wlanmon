@@ -24,5 +24,5 @@ http://wifinigel.blogspot.com/2016/09/getting-data-out-of-windows-netsh-wlan.htm
        Get-ExecutionPolicy
 
  Note2: 
-        This has only been tested on a Win 10 machine. This is a Beta script and will have bug. 
+        This has only been tested on a Win 10 machine. This is a Beta script and will have bugs. 
 
