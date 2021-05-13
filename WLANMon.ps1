@@ -26,6 +26,10 @@
 # BETA V0.02 - Changed log output to ASCII, so log csv file will open correctly in Excel
 ##########################################################################################
 
+Param(
+   [int]$ThresholdSignal = -65,
+   [int]$ThresholdDataRate = 24
+)
 
 #Define and buid window GUI
 Add-Type -AssemblyName System.Windows.Forms
@@ -340,7 +344,7 @@ $DataRateReqLabel.ForeColor      = "#ffffff"
 
 $SignalRequirment                = New-Object system.Windows.Forms.TextBox
 $SignalRequirment.multiline      = $false
-$SignalRequirment.text           = "-65"
+$SignalRequirment.text           = $ThresholdSignal
 $SignalRequirment.width          = 30
 $SignalRequirment.height         = 17
 $SignalRequirment.Anchor         = 'left'
@@ -349,7 +353,7 @@ $SignalRequirment.Font           = 'Microsoft Sans Serif,8'
 
 $DataRateReqirment               = New-Object system.Windows.Forms.TextBox
 $DataRateReqirment.multiline     = $false
-$DataRateReqirment.text          = "24"
+$DataRateReqirment.text          = $ThresholdDataRate
 $DataRateReqirment.width         = 30
 $DataRateReqirment.height        = 20
 $DataRateReqirment.location      = New-Object System.Drawing.Point(100,43)
