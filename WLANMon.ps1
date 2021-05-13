@@ -588,7 +588,7 @@ Do{
 
     # Profile
     $Profile_line = $output | Select-String -Pattern 'Profile'
-    $Profile = ($Profile_line -split ":")[-1].Trim()
+    $ProfileName = ($Profile_line -split ":")[-1].Trim()
 	
   #Handle roaming	
   if (-NOT ($BSSID.text -eq $OldBSSID)) {
@@ -618,7 +618,7 @@ else {
 
 #Write log file
 If ($LogCheckbox.checked) {
-   $logline = "$CurrentTime, $Name, $Adaptor, $GUID, $MACAdd, $State, $SSIDText, $BSSIDText, $NetworkType, $RadType, $Auth, $CipherText, $Connection, $Chan, $RxRate, $TxRate, $SignalLevelPercent, $dBmSig, $Profile"
+   $logline = "$CurrentTime, $Name, $Adaptor, $GUID, $MACAdd, $State, $SSIDText, $BSSIDText, $NetworkType, $RadType, $Auth, $CipherText, $Connection, $Chan, $RxRate, $TxRate, $SignalLevelPercent, $dBmSig, $ProfileName"
 
    if ($LoggingEnabled -eq $true) {
       $logline | Out-File -append -FilePath $filename -Encoding ascii
