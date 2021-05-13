@@ -500,7 +500,7 @@ Do{
     $Connected.BackColor             = "#7ed321"
 
     # SSID
-    $SSID_line = $output | Select-String 'SSID'| select -First 1
+    $SSID_line = $output | Select-String 'SSID'| Select-Object -First 1
     $SSIDText = ($SSID_line -split ":")[-1].Trim()
     $SSID.text = $SSIDText
 
