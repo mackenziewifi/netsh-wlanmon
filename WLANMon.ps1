@@ -1,6 +1,6 @@
-﻿##############################################################################################
+﻿###########################################################################################################################
 #
-# Windows Netsh WLANMon Powershell script BETA v0.02
+# Windows Netsh WLANMon Powershell script BETA v0.03
 #
 # The inspiration and starting place for this script was Nigel Bowden's powershell script
 # http://wifinigel.blogspot.com/2016/09/getting-data-out-of-windows-netsh-wlan.html
@@ -22,9 +22,10 @@
 #       Get-ExecutionPolicy
 #
 # Versions:
-# BETA V0.01 - Oringal
-# BETA V0.02 - Changed log output to ASCII, so log csv file will open correctly in Excel
-##########################################################################################
+# BETA V0.01 - Oringal (MackenzieWiFi)
+# BETA V0.02 - Changed log output to ASCII, so log csv file will open correctly in Excel (MackenzieWiFi)
+# BETA V0.03 - Added options for silent execution, added optional parameters, and minor cleanup (Chris Kibble)
+###########################################################################################################################
 
 Param(
    [int]$ThresholdSignal = -65,
@@ -42,7 +43,7 @@ Add-Type -AssemblyName System.Windows.Forms
 $WLANMon                        = New-Object system.Windows.Forms.Form
 $WLANMon.ClientSize             = '655,804'
 $WLANMon.BackColor              = "#000000"
-$WLANMon.text                   = "Netsh WLANMon - Beta 0.02"
+$WLANMon.text                   = "Netsh WLANMon - Beta 0.03"
 $WLANMon.TopMost                = $false
 $WLANMon.location        		  = New-Object System.Drawing.Point(10,10)
 
