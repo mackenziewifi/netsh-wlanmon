@@ -28,7 +28,8 @@
 
 Param(
    [int]$ThresholdSignal = -65,
-   [int]$ThresholdDataRate = 24
+   [int]$ThresholdDataRate = 24,
+   [string]$LogFilePrefix = "WLANMonLog"
 )
 
 #Define and buid window GUI
@@ -392,7 +393,7 @@ $FileNameLabel.ForeColor     	 = "#ffffff"
 
 $LogFileName           			 = New-Object system.Windows.Forms.TextBox
 $LogFileName.multiline   	 	 = $false
-$LogFileName.text        		 = "WLANMonLog"
+$LogFileName.text        		 = $LogFilePrefix
 $LogFileName.width				 = 220
 $LogFileName.height       		 = 20
 $LogFileName.location    		 = New-Object System.Drawing.Point(100,43)
@@ -441,7 +442,6 @@ $StartButton.Add_Click({
    $hour = ($CurrentTime -split ":")[0].substring(11)
    $min = ($CurrentTime -split ":")[1].Trim()
    $sec = ($CurrentTime -split ":")[-1]
-
 
    #Start button control
    If ($StartButton.text -eq "Start") {
