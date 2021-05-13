@@ -29,6 +29,7 @@
 Param(
    [int]$ThresholdSignal = -65,
    [int]$ThresholdDataRate = 24,
+   [int]$SleepInterval = 1,
    [string]$LogFilePrefix = "WLANMonLog",
    [switch]$Silent
 )
@@ -429,9 +430,6 @@ $LogSettings.controls.AddRange(@($LogCheckbox,$FileNameLabel,$LogFileName))
 
 #Start button is click
 $sbStart = {  
-
-   # Define loop wait time in secs
-   $SleepInterval = 1
 
    #Init variables
    $RoamNum = 0
