@@ -428,7 +428,7 @@ $LogSettings.controls.AddRange(@($LogCheckbox,$FileNameLabel,$LogFileName))
    $OldBSSID = ''
 
 #Start button is click
-$StartButton.Add_Click({  
+$sbStart = {  
 
    # Define loop wait time in secs
    $SleepInterval = 1
@@ -654,7 +654,9 @@ $StartButton.Add_Click({
    }
    Until (0)
 
-}) # // End of Start Button Control Code
+} # End of $sbStart (Start Button Click Code)
+
+$StartButton.Add_Click($sbStart)
 
 #Break loop is form close is clicked
 $WLANMon.Add_FormClosing({ 
@@ -664,5 +666,6 @@ $WLANMon.Add_FormClosing({
 If(-Not($Silent)) {
    $WLANMon.ShowDialog()
 } else {
-   
+   $LogCheckbox.checked = $true
+   $StartButton.PerformClick()
 }
