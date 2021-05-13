@@ -44,7 +44,7 @@ $WLANMon.ClientSize             = '655,804'
 $WLANMon.BackColor              = "#000000"
 $WLANMon.text                   = "Netsh WLANMon - Beta 0.02"
 $WLANMon.TopMost                = $false
-$WLANMon.location        		= New-Object System.Drawing.Point(10,10)
+$WLANMon.location        		  = New-Object System.Drawing.Point(10,10)
 
 $Requirements                    = New-Object system.Windows.Forms.Groupbox
 $Requirements.height             = 73
@@ -54,11 +54,11 @@ $Requirements.ForeColor          = "#ffffff"
 $Requirements.location           = New-Object System.Drawing.Point(10,10)
 
 $LogSettings                     = New-Object system.Windows.Forms.Groupbox
-$LogSettings.height             = 73
-$LogSettings.width              = 330
-$LogSettings.text               = "Log Settings"
-$LogSettings.ForeColor          = "#ffffff"
-$LogSettings.location           = New-Object System.Drawing.Point(190,10)
+$LogSettings.height              = 73
+$LogSettings.width               = 330
+$LogSettings.text                = "Log Settings"
+$LogSettings.ForeColor           = "#ffffff"
+$LogSettings.location            = New-Object System.Drawing.Point(190,10)
 
 $WinAdaptorGroup                 = New-Object system.Windows.Forms.Groupbox
 $WinAdaptorGroup.height          = 76
@@ -71,21 +71,21 @@ $NetworkGroup                    = New-Object system.Windows.Forms.Groupbox
 $NetworkGroup.height             = 106
 $NetworkGroup.width              = 635
 $NetworkGroup.text               = "Network"
-$NetworkGroup.ForeColor           = "#ffffff"
+$NetworkGroup.ForeColor          = "#ffffff"
 $NetworkGroup.location           = New-Object System.Drawing.Point(10,179)
 
 $RSSIGroup                       = New-Object system.Windows.Forms.Groupbox
 $RSSIGroup.height                = 106
 $RSSIGroup.width                 = 635
 $RSSIGroup.text                  = "RSSI"
-$RSSIGroup.ForeColor           = "#ffffff"
+$RSSIGroup.ForeColor             = "#ffffff"
 $RSSIGroup.location              = New-Object System.Drawing.Point(10,295)
 
 $RoamGroup                       = New-Object system.Windows.Forms.Groupbox
 $RoamGroup.height                = 383
 $RoamGroup.width                 = 635
 $RoamGroup.text                  = "Roaming Log"
-$RoamGroup.ForeColor           = "#ffffff"
+$RoamGroup.ForeColor             = "#ffffff"
 $RoamGroup.location              = New-Object System.Drawing.Point(10,411)
 
 $AdaptorName                     = New-Object system.Windows.Forms.Label
@@ -229,7 +229,7 @@ $SignalPercent.Font              = 'Microsoft Sans Serif,26'
 $SignalPercent.ForeColor         = "#7ed321"
 
 $RoamingList                     = New-Object system.Windows.Forms.ListView
-$RoamingList.View                  	 = 'Details'
+$RoamingList.View                = 'Details'
 $RoamingList.width               = 579
 $RoamingList.height              = 307
 [void]$RoamingList.Columns.Add('#')
@@ -381,27 +381,26 @@ $RoamCount.location              = New-Object System.Drawing.Point(126,20)
 $RoamCount.Font                  = 'Microsoft Sans Serif,14,style=Bold'
 $RoamCount.ForeColor             = "#ffffff"
 
-$LogCheckbox					 = New-Object System.Windows.Forms.Checkbox 
-$LogCheckbox.Location 			 = New-Object System.Drawing.Size(15,15) 
-$LogCheckbox.Text 				 = "Enable Logging"
+$LogCheckbox					      = New-Object System.Windows.Forms.Checkbox 
+$LogCheckbox.Location 			   = New-Object System.Drawing.Size(15,15) 
+$LogCheckbox.Text 				   = "Enable Logging"
 
-$FileNameLabel               	 = New-Object system.Windows.Forms.Label
-$FileNameLabel.text          	 = "File Name"
-$FileNameLabel.AutoSize      	 = $true
-$FileNameLabel.width        	 = 25
-$FileNameLabel.height        	 = 10
-$FileNameLabel.location      	 = New-Object System.Drawing.Point(15,43)
-$FileNameLabel.Font          	 = 'Microsoft Sans Serif,12'
-$FileNameLabel.ForeColor     	 = "#ffffff"
+$FileNameLabel               	   = New-Object system.Windows.Forms.Label
+$FileNameLabel.text          	   = "File Name"
+$FileNameLabel.AutoSize      	   = $true
+$FileNameLabel.width        	   = 25
+$FileNameLabel.height        	   = 10
+$FileNameLabel.location      	   = New-Object System.Drawing.Point(15,43)
+$FileNameLabel.Font          	   = 'Microsoft Sans Serif,12'
+$FileNameLabel.ForeColor     	   = "#ffffff"
 
-$LogFileName           			 = New-Object system.Windows.Forms.TextBox
-$LogFileName.multiline   	 	 = $false
-$LogFileName.text        		 = $LogFilePrefix
-$LogFileName.width				 = 220
-$LogFileName.height       		 = 20
-$LogFileName.location    		 = New-Object System.Drawing.Point(100,43)
-$LogFileName.Font        		 = 'Microsoft Sans Serif,8'
-
+$LogFileName           			   = New-Object system.Windows.Forms.TextBox
+$LogFileName.multiline   	 	   = $false
+$LogFileName.text        		   = $LogFilePrefix
+$LogFileName.width				   = 220
+$LogFileName.height       		   = 20
+$LogFileName.location    		   = New-Object System.Drawing.Point(100,43)
+$LogFileName.Font        		   = 'Microsoft Sans Serif,8'
 
 $WLANMon.controls.AddRange(@($TitleLable,$WinAdaptorGroup,$RSSIGroup,$NetworkGroup,$RoamGroup,$Requirements, $LogSettings,$Connected,$ConnectedLabel,$StartButton))
 $WinAdaptorGroup.controls.AddRange(@($AdaptorName,$MACLabel,$MAC,$RadioLabel,$RadioType))
@@ -411,25 +410,24 @@ $RoamGroup.controls.AddRange(@($RoamingList,$RoamCountLabel,$RoamCount))
 $Requirements.controls.AddRange(@($SignalReqlabel,$DataRateReqLabel,$SignalRequirment,$DataRateReqirment))
 $LogSettings.controls.AddRange(@($LogCheckbox,$FileNameLabel,$LogFileName))
 
-
 #Init variables
-   $LoggingEnabled = $false
-   $script:CancelLoop = $false
-   $Adaptor = ''
-   $MACAdd = ''
-   $SSIDText = ''
-   $BSSIDText = ''
-   $RadType = '' 
-   $Auth = ''
-   $CipherText = ''
-   $Chan = ''
-   $TxRate = ''
-   $RxRate = ''   
-   $dBmSig =''
-   $SignalLevelPercent = ''
-   $OldBSSID = ''
+$LoggingEnabled = $false
+$script:CancelLoop = $false
+$Adaptor = ''
+$MACAdd = ''
+$SSIDText = ''
+$BSSIDText = ''
+$RadType = '' 
+$Auth = ''
+$CipherText = ''
+$Chan = ''
+$TxRate = ''
+$RxRate = ''   
+$dBmSig =''
+$SignalLevelPercent = ''
+$OldBSSID = ''
 
-#Start button is click
+#Start button click code
 $sbStart = {  
 
    #Init variables
@@ -472,196 +470,189 @@ $sbStart = {
    #Execute the netsh commmand
    $output = netsh.exe wlan show interfaces
    
-
    # Start Loop
-   Do{
+   Do {
 
-   #Run netsh command to get wirelss profile info
-   $output = netsh.exe wlan show interfaces
+      #Run netsh command to get wirelss profile info
+      $output = netsh.exe wlan show interfaces
 
-   # Get time to time-stamp entry
-   $CurrentTime = Get-Date
+      # Get time to time-stamp entry
+      $CurrentTime = Get-Date
 
-   # Name
-   $Name_line = $output | Select-String -Pattern 'Name'
-   $Name = ($Name_line -split ":")[-1].Trim()
+      # Name
+      $Name_line = $output | Select-String -Pattern 'Name'
+      $Name = ($Name_line -split ":")[-1].Trim()
 
-   # Description
-   $Description_line = $output | Select-String -Pattern 'Description'
-   $Adaptor = ($Description_line -split ":")[-1].Trim()
-   $AdaptorName.text = $Adaptor
+      # Description
+      $Description_line = $output | Select-String -Pattern 'Description'
+      $Adaptor = ($Description_line -split ":")[-1].Trim()
+      $AdaptorName.text = $Adaptor
 
-   # GUID
-   $GUID_line = $output | Select-String -Pattern 'GUID'
-   $GUID = ($GUID_line -split ":")[-1].Trim()
+      # GUID
+      $GUID_line = $output | Select-String -Pattern 'GUID'
+      $GUID = ($GUID_line -split ":")[-1].Trim()
 
-   # Physical Address
-   $Physical_line = $output | Select-String -Pattern 'Physical'
-   $MACAdd = ($Physical_line -split ":", 2)[-1].Trim()
-   $MAC.text = $MACAdd
+      # Physical Address
+      $Physical_line = $output | Select-String -Pattern 'Physical'
+      $MACAdd = ($Physical_line -split ":", 2)[-1].Trim()
+      $MAC.text = $MACAdd
 
-   # State
-   $State_line = $output | Select-String -Pattern 'State'
-   $State = ($State_line -split ":")[-1].Trim()
+      # State
+      $State_line = $output | Select-String -Pattern 'State'
+      $State = ($State_line -split ":")[-1].Trim()
 
-   if ($State -eq 'connected') {
-   
-      $Connected.BackColor             = "#7ed321"
-
-      # SSID
-      $SSID_line = $output | Select-String 'SSID'| Select-Object -First 1
-      $SSIDText = ($SSID_line -split ":")[-1].Trim()
-      $SSID.text = $SSIDText
-
-      # BSSID
-      $BSSID_line = $output | Select-String -Pattern 'BSSID'
-      $BSSIDText = ($BSSID_line -split ":", 2)[-1].Trim()
-      $BSSID.text = $BSSIDText
-
-      # NetworkType
-      $NetworkType_line = $output | Select-String -Pattern 'Network type'
-      $NetworkType = ($NetworkType_line -split ":")[-1].Trim()
-
-      # RadioType
-      $RadioType_line = $output | Select-String -Pattern 'Radio type'
-      $RadType = ($RadioType_line -split ":")[-1].Trim()
-      $RadioType.text = $RadType
-
-      # Authentication
-      $Authentication_line = $output | Select-String -Pattern 'Authentication'
-      $Auth = ($Authentication_line -split ":")[-1].Trim()
-      $Authentiction.text = $Auth
-
-      # Cipher
-      $Cipher_line = $output | Select-String -Pattern 'Cipher'
-      $CipherText = ($Cipher_line -split ":")[-1].Trim()
-      $Cipher.text = $CipherText
-
-      # Connection mode
-      $Connection_line = $output | Select-String -Pattern 'Connection mode'
-      $Connection = ($Connection_line -split ":")[-1].Trim()
-
-      # Channel
-      $Channel_line = $output | Select-String -Pattern 'Channel'
-      $Chan = ($Channel_line -split ":")[-1].Trim()
-      $Channel.text = $Chan
-
-      # Receive Rate
-      $RecRate_line = $output | Select-String -Pattern 'Receive rate'
-      $RxRate = ($RecRate_line -split ":")[-1].Trim()
-      $RXDataRate.text = $RxRate
+      if ($State -eq 'connected') {
       
-      
-      # Transmit Rate
-      $TransRate_line = $output | Select-String -Pattern 'Transmit rate'
-      $TxRate = ($TransRate_line -split ":")[-1].Trim()
-      $TXDataRate.text = $TxRate
+         $Connected.BackColor             = "#7ed321"
 
-      #Evaluate transmit and recieve data rate against requirements
-      if([int]$RXDataRate.text -lt [int]$DataRateReqirment.text) {
-         $RXDataRate.ForeColor = "#d0021b"
+         # SSID
+         $SSID_line = $output | Select-String 'SSID'| Select-Object -First 1
+         $SSIDText = ($SSID_line -split ":")[-1].Trim()
+         $SSID.text = $SSIDText
+
+         # BSSID
+         $BSSID_line = $output | Select-String -Pattern 'BSSID'
+         $BSSIDText = ($BSSID_line -split ":", 2)[-1].Trim()
+         $BSSID.text = $BSSIDText
+
+         # NetworkType
+         $NetworkType_line = $output | Select-String -Pattern 'Network type'
+         $NetworkType = ($NetworkType_line -split ":")[-1].Trim()
+
+         # RadioType
+         $RadioType_line = $output | Select-String -Pattern 'Radio type'
+         $RadType = ($RadioType_line -split ":")[-1].Trim()
+         $RadioType.text = $RadType
+
+         # Authentication
+         $Authentication_line = $output | Select-String -Pattern 'Authentication'
+         $Auth = ($Authentication_line -split ":")[-1].Trim()
+         $Authentiction.text = $Auth
+
+         # Cipher
+         $Cipher_line = $output | Select-String -Pattern 'Cipher'
+         $CipherText = ($Cipher_line -split ":")[-1].Trim()
+         $Cipher.text = $CipherText
+
+         # Connection mode
+         $Connection_line = $output | Select-String -Pattern 'Connection mode'
+         $Connection = ($Connection_line -split ":")[-1].Trim()
+
+         # Channel
+         $Channel_line = $output | Select-String -Pattern 'Channel'
+         $Chan = ($Channel_line -split ":")[-1].Trim()
+         $Channel.text = $Chan
+
+         # Receive Rate
+         $RecRate_line = $output | Select-String -Pattern 'Receive rate'
+         $RxRate = ($RecRate_line -split ":")[-1].Trim()
+         $RXDataRate.text = $RxRate
+                  
+         # Transmit Rate
+         $TransRate_line = $output | Select-String -Pattern 'Transmit rate'
+         $TxRate = ($TransRate_line -split ":")[-1].Trim()
+         $TXDataRate.text = $TxRate
+
+         #Evaluate transmit and recieve data rate against requirements
+         if([int]$RXDataRate.text -lt [int]$DataRateReqirment.text) {
+            $RXDataRate.ForeColor = "#d0021b"
+         } else {
+            $RXDataRate.ForeColor = "#b8e986"
+         }
+
+         if([int]$TXDataRate.text -lt [int]$DataRateReqirment.text) {
+            $TXDataRate.ForeColor = "#d0021b"
+         } else {
+            $TXDataRate.ForeColor = "#b8e986"
+         }
+         
+         # Signal (%)
+         $SignalLevelPercent_line = $output | Select-String -Pattern 'Signal'
+         $SignalLevelPercent = ($SignalLevelPercent_line -split ":")[-1].Trim()	
+         $SignalPercent.text = $SignalLevelPercent
+
+         # Signal (dBm)
+         $SignalLevelPercent_trimmed = $SignalLevelPercent.TrimEnd('%')
+         $dBmSig = (([int]$SignalLevelPercent_trimmed)/2) - 100
+         $SignaldB.text = $dBmSig
+
+         #Evaluated signal strength against requirment 
+         if($dBmSig -lt [int]$SignalRequirment.text) {
+            $SignaldB.ForeColor = "#d0021b"
+            $SignalPercent.ForeColor = "#d0021b"
+         } else{
+            $SignaldB.ForeColor = "#b8e986"
+            $SignalPercent.ForeColor = "#b8e986"
+         }
+         
+         # Signal (dBm)
+         $SignalLevelPercent_trimmed = $SignalLevelPercent.TrimEnd('%')
+         $dBmSig = (([int]$SignalLevelPercent_trimmed)/2) - 100
+         $SignaldB.text = $dBmSig
+
+         # Profile
+         $Profile_line = $output | Select-String -Pattern 'Profile'
+         $ProfileName = ($Profile_line -split ":")[-1].Trim()
+         
+         #Handle roaming	
+         if (-NOT ($BSSID.text -eq $OldBSSID)) {
+            if (-NOT ($OldBSSID -eq '')) {
+               $RoamNum = $RoamNum + 1
+               $RoamCount.text = $RoamNum
+               $CurrentBSS = $BSSID.text
+               $item1 = New-Object System.Windows.Forms.ListViewItem($RoamNum)
+               $item1.SubItems.Add("$CurrentTime")
+               $item1.SubItems.Add($OldBSSID)
+               $item1.SubItems.Add($CurrentBSS)
+               $RoamingList.Items.Add($item1)
+               $RoamingList.AutoResizeColumns(2)
+            }
+         }  
       } else {
-         $RXDataRate.ForeColor = "#b8e986"
+         $Connected.BackColor = "#d0021b"
+         $Authentiction.text = ''
+         $Cipher.text = ''
+         $Channel.text =''
+         $TXDataRate.text =''
+         $RXDataRate.text = ''
+         $SignalPercent.text = ''
+         $SignaldB.text = ''
       }
 
-      if([int]$TXDataRate.text -lt [int]$DataRateReqirment.text) {
-         $TXDataRate.ForeColor = "#d0021b"
+      #Write log file
+      If ($LogCheckbox.checked) {
+         $logline = "$CurrentTime, $Name, $Adaptor, $GUID, $MACAdd, $State, $SSIDText, $BSSIDText, $NetworkType, $RadType, $Auth, $CipherText, $Connection, $Chan, $RxRate, $TxRate, $SignalLevelPercent, $dBmSig, $ProfileName"
+
+         if ($LoggingEnabled -eq $true) {
+            $logline | Out-File -append -FilePath $filename -Encoding ascii
+         } else {
+            $headers | Out-File -FilePath $filename -Encoding ascii
+            $logline | Out-File -append -FilePath $filename -Encoding ascii
+            $LoggingEnabled = $true
+         }
       } else {
-         $TXDataRate.ForeColor = "#b8e986"
+         $LoggingEnabled = $false
       }
+
+      #Roaming control
+      $OldBSSID = $BSSID.text
+
+      #give time to external events out side of loop 
+      [System.Windows.Forms.Application]::DoEvents()
       
-      # Signal (%)
-      $SignalLevelPercent_line = $output | Select-String -Pattern 'Signal'
-      $SignalLevelPercent = ($SignalLevelPercent_line -split ":")[-1].Trim()	
-      $SignalPercent.text = $SignalLevelPercent
-
-      # Signal (dBm)
-      $SignalLevelPercent_trimmed = $SignalLevelPercent.TrimEnd('%')
-      $dBmSig = (([int]$SignalLevelPercent_trimmed)/2) - 100
-      $SignaldB.text = $dBmSig
-
-      #Evaluated signal strength against requirment 
-      if($dBmSig -lt [int]$SignalRequirment.text) {
-         $SignaldB.ForeColor = "#d0021b"
-         $SignalPercent.ForeColor = "#d0021b"
+      #Exit loop control  
+      If($script:CancelLoop -eq $true) {
+         break;
       }
-      else{
-         $SignaldB.ForeColor = "#b8e986"
-         $SignalPercent.ForeColor = "#b8e986"
+
+      # Silent Run Time Seconds Exceeded
+      If((Get-Date) -ge $EndTime) {
+         break;
       }
-      
-      # Signal (dBm)
-      $SignalLevelPercent_trimmed = $SignalLevelPercent.TrimEnd('%')
-      $dBmSig = (([int]$SignalLevelPercent_trimmed)/2) - 100
-      $SignaldB.text = $dBmSig
 
-      # Profile
-      $Profile_line = $output | Select-String -Pattern 'Profile'
-      $ProfileName = ($Profile_line -split ":")[-1].Trim()
-      
-   #Handle roaming	
-   if (-NOT ($BSSID.text -eq $OldBSSID)) {
-      if (-NOT ($OldBSSID -eq '')) {
-         $RoamNum = $RoamNum + 1
-         $RoamCount.text = $RoamNum
-         $CurrentBSS = $BSSID.text
-         $item1 = New-Object System.Windows.Forms.ListViewItem($RoamNum)
-         $item1.SubItems.Add("$CurrentTime")
-         $item1.SubItems.Add($OldBSSID)
-         $item1.SubItems.Add($CurrentBSS)
-         $RoamingList.Items.Add($item1)
-         $RoamingList.AutoResizeColumns(2)
-      }
-   }  
-   } else {
-      $Connected.BackColor             = "#d0021b"
-      $Authentiction.text = ''
-      $Cipher.text = ''
-      $Channel.text =''
-      $TXDataRate.text =''
-      $RXDataRate.text = ''
-      $SignalPercent.text = ''
-      $SignaldB.text = ''
-   }
-
-   #Write log file
-   If ($LogCheckbox.checked) {
-      $logline = "$CurrentTime, $Name, $Adaptor, $GUID, $MACAdd, $State, $SSIDText, $BSSIDText, $NetworkType, $RadType, $Auth, $CipherText, $Connection, $Chan, $RxRate, $TxRate, $SignalLevelPercent, $dBmSig, $ProfileName"
-
-      if ($LoggingEnabled -eq $true) {
-         $logline | Out-File -append -FilePath $filename -Encoding ascii
-      } else {
-         $headers | Out-File -FilePath $filename -Encoding ascii
-         $logline | Out-File -append -FilePath $filename -Encoding ascii
-
-      $LoggingEnabled = $true
-      }
-   }
-   else {
-      $LoggingEnabled = $false
-   }
-
-   #Roaming control
-   $OldBSSID = $BSSID.text
-
-   #give time to external events out side of loop 
-   [System.Windows.Forms.Application]::DoEvents()
-   
-   #Exit loop control  
-   If($script:CancelLoop -eq $true) {
-      break;
-   }
-
-   # Silent Run Time Seconds Exceeded
-   If((Get-Date) -ge $EndTime) {
-      break;
-   }
-
-   #loop sleep
-   Start-Sleep -s $SleepInterval
-
-   }
-   Until (0)
+      #loop sleep
+      Start-Sleep -s $SleepInterval
+   } Until (0) #End of Do/Loop for Running Code
 
 } # End of $sbStart (Start Button Click Code)
 
