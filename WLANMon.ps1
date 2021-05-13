@@ -667,5 +667,5 @@ If(-Not($Silent)) {
    $WLANMon.ShowDialog()
 } else {
    $LogCheckbox.checked = $true
-   $StartButton.PerformClick()
+   Invoke-Command -ScriptBlock $sbStart
 }
