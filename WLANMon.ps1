@@ -23,7 +23,7 @@
 #
 # Versions:
 # BETA V0.01 - Oringal
-# BETA V0.02 - Chnaged log output to ASCII, SO Log csv file will open correclty in Excel
+# BETA V0.02 - Chnaged log output to ASCII, SO Log csv file will open correctly in Excel
 ##########################################################################################
 
 
