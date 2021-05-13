@@ -29,7 +29,8 @@
 Param(
    [int]$ThresholdSignal = -65,
    [int]$ThresholdDataRate = 24,
-   [string]$LogFilePrefix = "WLANMonLog"
+   [string]$LogFilePrefix = "WLANMonLog",
+   [switch]$Silent
 )
 
 #Define and buid window GUI
@@ -660,6 +661,8 @@ $WLANMon.Add_FormClosing({
     $script:CancelLoop = $true
 })
 
-
-#display GUI
-$WLANMon.ShowDialog()
+If(-Not($Silent)) {
+   $WLANMon.ShowDialog()
+} else {
+   
+}
