@@ -31,6 +31,7 @@ Param(
    [int]$ThresholdDataRate = 24,
    [int]$SleepInterval = 1,
    [string]$LogFilePrefix = "WLANMonLog",
+   [int]$SilentRunTimeSeconds = -1,
    [switch]$Silent
 )
 
@@ -442,6 +443,12 @@ $sbStart = {
    $min = ($CurrentTime -split ":")[1].Trim()
    $sec = ($CurrentTime -split ":")[-1]
 
+   If($Silent -and $SilentRunTimeSeconds -gt 0) {
+      $EndTime = $(Get-Date).AddSeconds($SilentRunTimeSeconds)
+   } else {
+      $EndTime = $null
+   }
+
    #Start button control
    If ($StartButton.text -eq "Start") {
       $timestamp = "$day-$month-$year-$hour.$min.$sec"
@@ -606,8 +613,7 @@ $sbStart = {
          $RoamingList.AutoResizeColumns(2)
       }
    }  
-   }
-   else {
+   } else {
       $Connected.BackColor             = "#d0021b"
       $Authentiction.text = ''
       $Cipher.text = ''
@@ -643,6 +649,11 @@ $sbStart = {
    
    #Exit loop control  
    If($script:CancelLoop -eq $true) {
+      break;
+   }
+
+   # Silent Run Time Seconds Exceeded
+   If((Get-Date) -ge $EndTime) {
       break;
    }
 
