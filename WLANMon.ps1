@@ -224,12 +224,11 @@ $RoamingList                     = New-Object system.Windows.Forms.ListView
 $RoamingList.View                  	 = 'Details'
 $RoamingList.width               = 579
 $RoamingList.height              = 307
-$RoamingList.Columns.Add('#')
-$RoamingList.Columns.Add('Time')
-$RoamingList.Columns.Add('From')
-$RoamingList.Columns.Add('To')
+[void]$RoamingList.Columns.Add('#')
+[void]$RoamingList.Columns.Add('Time')
+[void]$RoamingList.Columns.Add('From')
+[void]$RoamingList.Columns.Add('To')
 $RoamingList.location            = New-Object System.Drawing.Point(22,55)
-
 
 $AuthentictionLabel              = New-Object system.Windows.Forms.Label
 $AuthentictionLabel.text         = "Authentication:"
