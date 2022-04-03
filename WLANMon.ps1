@@ -508,7 +508,8 @@ Do{
 
     # BSSID
     $BSSID_line = $output | Select-String -Pattern 'BSSID'
-    $BSSIDText = ($BSSID_line -split ":", 2)[-1].Trim()
+    $BSSID_line2 = (($BSSID_line -split [Environment]::NewLine)[0])
+    $BSSIDText = (($BSSID_line2 -split ":", 2)[-1].Trim())
     $BSSID.text = $BSSIDText
 
     # NetworkType
